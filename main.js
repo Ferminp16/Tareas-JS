@@ -10,8 +10,6 @@
 // alert ("Nombre:" + " " +  nombre  +  "\nApellido:" + " " + apellido + "\nCompraste" + " " + totalRemeras + " " + "remeras" )
 
 if ((nombre != "") && (apellido != "" )){
-    let remerasCelestes = parseInt(prompt("Cuantas remeras celestes quiere?"))
- let remerasBlancas = parseInt(prompt("Cuantas remeras blancas quiere?"))
    if(remerasBlancas + remerasCelestes <=5){
        alert("Hola" + " " + nombre + " " + apellido + " " + "las remeras cuestan $300 C/u")
     }else if(remerasBlancas + remerasCelestes <=10){
@@ -25,6 +23,8 @@ if ((nombre != "") && (apellido != "" )){
     alert("Debe ingresar nombre y apellido")
 }
    
+
+    
     
 
 
