@@ -23,19 +23,19 @@
 //     alert("Debe ingresar nombre y apellido")
 // }
 
-let remeras = prompt("elija un color de remera")
+let remeras = prompt("Elija un color de remera. Para salir escriba ESC")
 
 do {
 
-    if (remeras != "rojo") {
-        console.log("Usted ha elegido las remeras de color" + " " + remeras)
-    }else{(remeras = "rojo")
-        alert("No tenemos remeras de color rojo")
+    if (remeras != "ESC") {
+        console.log("Usted ha elegido las remeras de color" + " " + remeras);
+    }else{
+        alert("Usted no ha elegido ningun color");
 
    
     }
-    remeras = prompt("Elija otro color de remera")
-} while (remeras != "rojo")
+    remeras = prompt("Elija otro color de remera");
+} while (remeras != "ESC");
 
 
 
