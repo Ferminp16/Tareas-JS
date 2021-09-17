@@ -23,20 +23,41 @@
 //     alert("Debe ingresar nombre y apellido")
 // }
 
-let remeras = prompt("Elija un color de remera. Para salir escriba ESC")
+// let remeras = prompt("Elija un color de remera. Para salir escriba ESC")
+
+// do {
+
+//     if (remeras != "ESC") {
+//         console.log("Usted ha elegido las remeras de color" + " " + remeras);
+//     }else{
+//         alert("Usted no ha elegido ningun color");
+
+   
+//     }
+//     remeras = prompt("Elija otro color de remera");
+// } while (remeras != "ESC");
+
+
+alert("Bienvenido")
+
 
 do {
 
-    if (remeras != "ESC") {
-        console.log("Usted ha elegido las remeras de color" + " " + remeras);
-    }else{
-        alert("Usted no ha elegido ningun color");
-
-   
-    }
-    remeras = prompt("Elija otro color de remera");
-} while (remeras != "ESC");
+    let producto = parseInt(prompt(menu))
+    if (producto === 5) break
+    let cantidad = parseInt(prompt(selecCantidad))
 
 
+    addToCart(producto, cantidad)
+    resp = prompt("¿Desea agregar otro producto al carrito? SI / NO")
 
+
+} while (resp === "SI");
+
+if (total > 0) {
+
+    alert(`El total de su compra es de ${total}`)
+}
+
+alert("Gracias por su compra")
 
