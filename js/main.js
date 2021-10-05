@@ -1,39 +1,50 @@
-alert("Bienvenido a EVAHome")
+const gridContainer = document.getElementById("js-gridContainer");
+const searchInput = document.getElementById("js-searchInput");
+const searchButton = document.getElementById("js-searchButton")
 
-for (const producto of productos){
-    let container = document.createElement("div");
-    container.innerHTML = `<h3>Producto: ${producto.name}</h3>
-                           <p>Precio: ${producto.price}</p>
-                           <p>Stock: ${producto.stock}</p>
-                           <p>Codico: ${producto.id}</p>`
-document.body.appendChild(container)
 
-container.classList.add("containerProducto")
+const htmlTemplate = (product) => {
+    return `<div class ="card">
+              <h3 class="card__name">${product.name}</h3>
+              <p class="card__price">$${product.price}</p>
+              <p class="card__stock">Stock: ${product.stock} unidaddes</p>
+            </div>`;
 
-}
+};
 
-do {
+ const renderHtml = (products, container) => {
+     container.innerHTML = "";
+     if (products.length > 0) {
+         for (const product of products) {
+             const productInHtml = htmlTemplate(product);
+
+             container.innerHTML += productInHtml;
+         }
+     } else {
+         container.innerHTML = `<p class="container__message"> No se encuentra el producto buscado </p>`;
+     }
+ };
+
+  renderHtml(products, gridContainer);
+
+  const filterProduct = () => {
+      const searchInputValue = searchInput.value;
+
+      const filteredProducts = products.filter((product) => {
+          const productNameLowerCase = product.name.toLowerCase();
+      
+         return productNameLowerCase.includes(searchInputValue.toLowerCase())
+        });
     
-    let option = mostrarMenu();
-    if (option === productos.length + 1) break
-    let cantidad = parseInt(prompt(selecCantidad))
-    
-    
-    addToCart(option, cantidad)
-    
-    resp = prompt("¿Desea agregar otro producto al carrito? SI / NO")
-    resp = resp.toUpperCase()
-    
-} while (resp === "SI");
-
-if (total > 0) {
-    
-    alert(`El total de su compra es de $${total}`)
-}
-
-alert("Gracias por su compra")
+        renderHtml(filteredProducts, gridContainer)
+  };
 
 
+  searchButton.addEventListener("click", filterProduct);
+
+
+
+  
 
 
 

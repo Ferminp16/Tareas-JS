@@ -1,3 +1,96 @@
-.containerProducto{
-    border: solid 2px black;
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+}
+
+ol{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+li{
+    margin: 10px;
+    list-style: none;
+   
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+body {
+	background: rgb(252, 230, 107);
+	max-height: 100vh;
+	max-width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	gap: 10vh;
+	padding: 10vh;
+}
+
+.searchBar {
+	width: 80vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.searchBar__title {
+	color: white;
+	flex-basis: 50%;
+	flex-grow: 1;
+}
+
+.searchBar__input {
+	min-height: 1rem;
+	flex-grow: 3;
+}
+
+.searchBar__button {
+	background: white;
+	color: black;
+	min-height: 1.5em;
+	flex-grow: 1;
+	border: none;
+	cursor: pointer;
+	display: none;
+}
+
+.container {
+	width: 80vw;
+}
+
+.container__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+	grid-gap: 2rem;
+}
+
+.container__message {
+	text-align: center;
+	font-size: 2rem;
+	color: rgb(156, 229, 252);
+	grid-column: 1/10;
+}
+
+.card {
+	background: rgb(159, 255, 239);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+	min-height: 10rem;
+	max-height: 15rem;
+}
+
+.card__name {
+	font-weight: 500;
+    color: rgb(163, 132, 137);
 }
